@@ -1,0 +1,163 @@
+/* Southwest Cotton Physiology Conference — site styles
+   Colors taken from the conference logo */
+:root {
+  --maroon: #7a1f2b;
+  --maroon-dark: #5c1620;
+  --purple: #3a2a7d;
+  --orange: #e0701a;
+  --ink: #2b2b2b;
+  --muted: #666;
+  --line: #e6e1e1;
+  --bg: #ffffff;
+  --bg-soft: #faf7f6;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+h1, h2, h3, h4 { font-family: "Roboto Slab", Georgia, serif; color: var(--maroon); line-height: 1.25; }
+a { color: var(--purple); }
+a:hover { color: var(--maroon); }
+img { max-width: 100%; height: auto; }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  background: #fff;
+  border-bottom: 4px solid var(--maroon);
+  position: sticky; top: 0; z-index: 10;
+}
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand img { height: 56px; width: auto; }
+.brand span { font-family: "Roboto Slab", Georgia, serif; font-weight: 700; color: var(--maroon); font-size: 1.05rem; line-height: 1.15; }
+.brand small { display: block; color: var(--purple); font-family: "Roboto", sans-serif; font-weight: 500; letter-spacing: .08em; font-size: .7rem; text-transform: uppercase; }
+
+.nav-links { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+.nav-links a {
+  display: block; padding: 8px 14px; border-radius: 6px;
+  text-decoration: none; color: var(--ink); font-weight: 500;
+}
+.nav-links a:hover { background: var(--bg-soft); color: var(--maroon); }
+.nav-links a.active { background: var(--maroon); color: #fff; }
+
+.nav-toggle {
+  display: none; background: none; border: 1px solid var(--line); border-radius: 6px;
+  padding: 8px 10px; font-size: 1.1rem; cursor: pointer; color: var(--maroon);
+}
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .nav-links { display: none; position: absolute; left: 0; right: 0; top: 100%; background: #fff;
+    flex-direction: column; padding: 8px 16px 16px; border-bottom: 4px solid var(--maroon); }
+  .nav-links.open { display: flex; }
+  .brand img { height: 44px; }
+}
+
+/* ---------- Hero ---------- */
+.hero { background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 40px 0 36px; text-align: center; }
+.hero img.logo { width: 340px; max-width: 80%; }
+.hero-facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-top: 18px; }
+.fact { text-align: left; }
+.fact .label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+.fact .value { font-weight: 500; }
+.fact .value a { color: var(--ink); }
+
+.page-title { background: var(--maroon); color: #fff; padding: 28px 0; }
+.page-title h1 { color: #fff; margin: 0; font-size: 1.9rem; }
+.page-title p { margin: 6px 0 0; opacity: .9; }
+
+main { padding: 36px 0 56px; }
+.section-title { border-bottom: 2px solid var(--line); padding-bottom: 8px; margin: 40px 0 18px; }
+.section-title:first-child { margin-top: 0; }
+
+/* ---------- Agenda ---------- */
+.day-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.day-tabs a {
+  text-decoration: none; padding: 8px 16px; border: 1px solid var(--maroon); border-radius: 999px;
+  color: var(--maroon); font-weight: 500; font-size: .95rem;
+}
+.day-tabs a:hover { background: var(--maroon); color: #fff; }
+
+.day { margin-bottom: 36px; scroll-margin-top: 90px; }
+.day-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.day-head h3 { margin: 0; font-size: 1.35rem; }
+.tag { background: var(--purple); color: #fff; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+
+.agenda { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.agenda td { padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.agenda td.time { white-space: nowrap; font-weight: 500; color: var(--maroon); width: 170px; }
+.agenda td.who { color: var(--muted); width: 34%; }
+.agenda tr.break td { background: var(--bg-soft); color: var(--muted); font-style: italic; }
+.agenda tr.sp-row td { color: var(--muted); }
+.agenda tr.sp-row td.title { color: var(--orange); font-weight: 500; }
+.agenda tr.meal td { background: #fff4ea; }
+@media (max-width: 640px) {
+  .agenda, .agenda tbody, .agenda tr, .agenda td { display: block; width: 100% !important; }
+  .agenda tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+  .agenda td { border: 0; padding: 2px 8px; }
+}
+
+/* ---------- Sponsors ---------- */
+.sponsors { background: var(--bg-soft); border-top: 1px solid var(--line); padding: 36px 0; text-align: center; }
+.sponsors h2 { margin-top: 0; }
+.sponsor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 18px; }
+.sponsor {
+  background: #fff; border: 1px solid var(--line); border-radius: 10px; min-height: 110px;
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+  font-weight: 700; color: var(--ink); text-decoration: none;
+}
+.sponsor img { max-height: 70px; width: auto; }
+.sponsor.placeholder { color: #aaa; font-weight: 400; border-style: dashed; }
+.sponsor-note { color: var(--muted); font-size: .9rem; margin-top: 16px; }
+
+/* ---------- Presentations & posters ---------- */
+.intro { color: var(--muted); max-width: 760px; }
+.filter { margin: 12px 0 24px; }
+.filter input {
+  width: 100%; max-width: 420px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; font: inherit;
+}
+.item {
+  border: 1px solid var(--line); border-left: 4px solid var(--maroon); border-radius: 8px;
+  margin-bottom: 12px; background: #fff;
+}
+.item.poster { border-left-color: var(--orange); }
+.item summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; }
+.item summary::-webkit-details-marker { display: none; }
+.item summary::after { content: "+"; margin-left: auto; font-size: 1.3rem; line-height: 1; color: var(--maroon); }
+.item[open] summary::after { content: "–"; }
+.item .meta { font-size: .85rem; color: var(--muted); }
+.item .t { font-weight: 700; color: var(--ink); }
+.item .body { padding: 0 16px 16px; border-top: 1px solid var(--line); }
+.item .body h4 { margin: 14px 0 6px; font-size: .95rem; color: var(--purple); }
+.item .body p { margin: 0 0 8px; text-align: justify; }
+.item .pending { color: #999; font-style: italic; }
+.num { background: var(--orange); color: #fff; border-radius: 6px; padding: 2px 8px; font-weight: 700; font-size: .85rem; white-space: nowrap; }
+.btn {
+  display: inline-block; background: var(--maroon); color: #fff; text-decoration: none;
+  padding: 10px 18px; border-radius: 8px; font-weight: 500;
+}
+.btn:hover { background: var(--maroon-dark); color: #fff; }
+.btn.small { padding: 6px 12px; font-size: .88rem; }
+
+/* ---------- Contact ---------- */
+.contact-card {
+  max-width: 640px; margin: 0 auto; text-align: center; border: 1px solid var(--line);
+  border-top: 5px solid var(--maroon); border-radius: 10px; padding: 32px 20px;
+}
+.contact-card .email { font-size: 1.4rem; font-weight: 700; display: inline-block; margin: 10px 0 18px; word-break: break-all; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+@media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+.box { background: var(--bg-soft); border-radius: 10px; padding: 18px 20px; }
+.box h3 { margin-top: 0; font-size: 1.1rem; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--maroon); color: #fff; padding: 22px 0; text-align: center; font-size: .92rem; }
+.site-footer a { color: #fff; }
+.site-footer .bar { height: 5px; background: linear-gradient(90deg, var(--purple) 0 33%, var(--orange) 33% 66%, var(--maroon-dark) 66%); margin-bottom: 18px; }
