@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Southwest Cotton Physiology Conference — February 10–12, 2026, Lubbock, TX.">
+  <meta name="description" content="Southwest Cotton Physiology Conference — February 9–11, 2027, Lubbock, TX.">
   <title>Student Posters | Southwest Cotton Physiology Conference</title>
   <link rel="icon" href="assets/images/swcpc-logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,8 @@
       </a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
       <ul class="nav-links">
-          <li><a href="index.html">Agenda</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="agenda.html">Agenda</a></li>
           <li><a href="presentations.html">Presentations</a></li>
           <li><a href="posters.html" class="active">Student Posters</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -38,12 +39,17 @@
   <main>
     <div class="container">
       <p class="intro">Graduate and undergraduate students present their research during the conference. Click a poster to read its abstract.</p>
-      <div class="filter"><input type="search" data-filter placeholder="Search by title, student, or institution..."></div>
+      <div class="empty-state">
+        <h2>Posters coming soon</h2>
+        <p>Accepted student posters for 2027 will be listed here. See below for how to submit.</p>
+      </div>
 
       <!-- ===== HOW TO ADD A POSTER =====
-           Copy one <details class="item poster"> block below, then edit the number, title,
-           authors, institution and abstract. Optional PDF: put it in assets/posters/ and link it.
-      -->
+           1. Delete the <div class="empty-state"> block above.
+           2. Copy the template below once per poster, remove the <!- - - -> markers and edit
+              the number, title, authors, institution and abstract. Optional PDF: assets/posters/.
+
+      <div class="filter"><input type="search" data-filter placeholder="Search by title, student, or institution..."></div>
 
       <details class="item poster">
         <summary>
@@ -55,10 +61,11 @@
         </summary>
         <div class="body">
           <h4>Abstract</h4>
-          <p class="pending">Abstract coming soon.</p>
-          <!-- <p><a class="btn small" href="assets/posters/P-01.pdf" target="_blank">View poster (PDF)</a></p> -->
+          <p>Abstract text here...</p>
+          <p><a class="btn small" href="assets/posters/P-01.pdf" target="_blank">View poster (PDF)</a></p>
         </div>
       </details>
+      -->
 
       <div class="two-col">
         <div class="box">
@@ -76,7 +83,7 @@
   <footer class="site-footer">
     <div class="bar"></div>
     <div class="container">
-      <p style="margin:0 0 4px;"><strong>Southwest Cotton Physiology Conference</strong> &middot; February 10&ndash;12, 2026 &middot; Lubbock, TX</p>
+      <p style="margin:0 0 4px;"><strong>Southwest Cotton Physiology Conference</strong> &middot; February 9&ndash;11, 2027 &middot; Lubbock, TX</p>
       <p style="margin:0;">Questions? <a href="mailto:swcpc@gmail.com">swcpc@gmail.com</a></p>
     </div>
   </footer>
